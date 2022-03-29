@@ -1,0 +1,33 @@
+{
+    "name": "awesome-javascript-regex",
+    "version": "1.0.0",
+    "description": "An on going process to keep an up to date and complete list - Obviously as much as it is possible - Regex for almost every thing.",
+    "keywords": [
+        "regex",
+        "javascript",
+        "typescript",
+        "awesome-regex",
+        "awesome-javascript-regex"
+    ],
+    "main": "index.js",
+    "scripts": {
+        "format": "prettier --write '**/*.ts' '**/*.json'",
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "prepare": "husky install"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/kasir-barati/awesom-javascript-regex.git"
+    },
+    "author": "kasir-barati",
+    "license": "GPL-3.0",
+    "bugs": {
+        "url": "https://github.com/kasir-barati/awesom-javascript-regex/issues"
+    },
+    "homepage": "https://github.com/kasir-barati/awesom-javascript-regex#readme",
+    "devDependencies": {
+        "husky": "^7.0.4",
+        "prettier": "^2.6.1",
+        "typescript": "^4.6.3"
+    }
+}

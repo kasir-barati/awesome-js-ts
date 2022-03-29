@@ -2,6 +2,10 @@
 
 I found also these two regex in [here](https://community.zscaler.com/t/international-passport-numbers-regex/12433). But IDK whether which one were correct. Therefore I just select one of them and put it in the `passport.ts`.
 
+# Generic regex
+
+Beware of using `genericRegexForPassportNumber` regex. Why? because it passes most wrong passport numbers. But if you are in a bad force you can use it for a short period of time but you need to fix this issue later on.
+
 # Germany
 
 1. `[A-Za-z][A-Za-z0-9]{9}D[^A-Za-z0-9]`

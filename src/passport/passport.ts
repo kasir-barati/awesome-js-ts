@@ -5,7 +5,10 @@
  * https://countrycode.org/ -- Country Codes
  */
 
-const passportRegexByCountryCode = {
+export const genericRegexForPassportNumber =
+    /^(?:[A-Z 0-9]{0,3})[0-9]{5,10}$/;
+
+export const passportRegexByCountryCode = {
     AM: /^[A-Z]{2}\d{7}$/, // ARMENIA
     AR: /^[A-Z]{3}\d{6}$/, // ARGENTINA
     AT: /^[A-Z]\d{7}$/, // AUSTRIA

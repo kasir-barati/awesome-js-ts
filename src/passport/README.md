@@ -1,6 +1,8 @@
 # Intro
 
-I found also these two regex in [here](https://community.zscaler.com/t/international-passport-numbers-regex/12433). But IDK whether which one were correct. Therefore I just select one of them and put it in the `passport.ts`.
+I found also these two regex in [here](https://community.zscaler.com/t/international-passport-numbers-regex/12433). But IDK whether which one were correct. Therefore I just select one of them and put it in the `passport.ts`. Please read [this document](http://www.highprogrammer.com/alan/numbers/mrp.html) for more info about the passport numbers and why passports look like this:
+
+<img src="./passport-pic.jpg" />
 
 # Generic regex
 

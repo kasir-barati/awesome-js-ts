@@ -8,6 +8,12 @@ I found also these two regex in [here](https://community.zscaler.com/t/internati
 
 Beware of using `genericRegexForPassportNumber` regex. Why? because it passes most wrong passport numbers. But if you are in a bad force you can use it for a short period of time but you need to fix this issue later on.
 
+# Wrong regex for those who wants to learn regex
+
+-   `/^(?:[A-Z]{3}[0-9]{4,}$)|(?:[A-Z]{2}[0-9]{5,}$)|(?:[A-Z]{1}[0-9]{6,}$)|(?:^[0-9]{7,}$)/i`
+-   `/^(?:[A-Z 0-9]{0,3})[0-9]{6,10}$/i`
+-   `/^[a-zA-Z]{0,3}[0-9]{6,10}$/i`
+
 # Germany
 
 1. `[A-Za-z][A-Za-z0-9]{9}D[^A-Za-z0-9]`

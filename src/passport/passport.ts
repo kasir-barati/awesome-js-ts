@@ -5,8 +5,9 @@
  * https://countrycode.org/ -- Country Codes
  */
 
-export const genericRegexForPassportNumber =
-    /^(?:[A-Z 0-9]{0,3})[0-9]{5,10}$/;
+export const genericRegexs = [
+    /(?:^[A-Z]{3}[0-9]{4,}$)|(?:^[A-Z]{2}[0-9]{5,}$)|(?:^[A-Z]{1}[0-9]{6,}$)|(?:^[0-9]{7,}$)/i,
+];
 
 export const passportRegexByCountryCode = {
     AM: /^[A-Z]{2}\d{7}$/, // ARMENIA

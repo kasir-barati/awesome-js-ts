@@ -1,14 +1,3 @@
-# awesom-javascript-regex
-
-An on going process to keep an up to date and complete list - Obviously as much as it is possible - Regex for almost every thing.
-
-# How to install it:
-
-1. `npm ci` or `pnpm i --frozen-lockfile`
-2. `npm run test:watch` to run the unit tests for the regexs
-
-# Contribute
-
 1. First way to contribute:
     1. Fork Repo and clone it
     2. Add your regex or update regex in the src

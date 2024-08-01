@@ -1,45 +1,44 @@
 {
-    "name": "awesome-javascript-regex",
-    "version": "1.0.0",
-    "description": "An on going process to keep an up to date and complete list - Obviously as much as it is possible - Regex for almost every thing.",
-    "keywords": [
-        "regex",
-        "javascript",
-        "typescript",
-        "awesome-regex",
-        "awesome-javascript-regex"
-    ],
-    "main": "index.js",
-    "scripts": {
-        "format": "prettier --write '**/*.ts' '**/*.json'",
-        "test": "jest",
-        "test:watch": "jest --watch",
-        "test:cov": "jest --coverage",
-        "prepare": "husky install"
-    },
-    "repository": {
-        "type": "git",
-        "url": "git+https://github.com/kasir-barati/awesom-javascript-regex.git"
-    },
-    "author": "kasir-barati",
-    "license": "GPL-3.0",
-    "bugs": {
-        "url": "https://github.com/kasir-barati/awesom-javascript-regex/issues"
-    },
-    "homepage": "https://github.com/kasir-barati/awesom-javascript-regex#readme",
-    "devDependencies": {
-        "@types/google-libphonenumber": "^7.4.23",
-        "@types/jest": "^27.4.1",
-        "husky": "^7.0.4",
-        "jest": "^27.5.1",
-        "prettier": "^2.6.1",
-        "ts-jest": "^27.1.4",
-        "ts-node": "^10.7.0",
-        "typescript": "^4.6.3"
-    },
-    "dependencies": {
-        "google-libphonenumber": "^3.2.27",
-        "i": "^0.3.7",
-        "npm": "^8.5.5"
-    }
+  "name": "awesome-js-ts",
+  "version": "1.0.0",
+  "description": "Here I would share with you all sort of awesome things about TS/JS. E.g. Regex, closure, etc",
+  "keywords": [
+    "regex",
+    "javascript",
+    "typescript",
+    "awesome-regex",
+    "awesome-javascript-regex"
+  ],
+  "main": "index.js",
+  "scripts": {
+    "format": "prettier --write '**/*.ts' '**/*.json'",
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "test:cov": "jest --coverage",
+    "prepare": "husky install"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kasir-barati/awesome-js-ts.git"
+  },
+  "author": "kasir-barati",
+  "license": "GPL-3.0",
+  "bugs": {
+    "url": "https://github.com/kasir-barati/awesome-js-ts/issues"
+  },
+  "homepage": "https://github.com/kasir-barati/awesome-js-ts#readme",
+  "devDependencies": {
+    "@jest/types": "^29.6.3",
+    "@types/google-libphonenumber": "^7.4.30",
+    "@types/jest": "^27.5.2",
+    "husky": "^7.0.4",
+    "jest": "^27.5.1",
+    "prettier": "^2.8.8",
+    "ts-jest": "^27.1.5",
+    "ts-node": "^10.9.2",
+    "typescript": "^4.9.5"
+  },
+  "dependencies": {
+    "google-libphonenumber": "^3.2.38"
+  }
 }

@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
+    <title>Change font size</title>
+    <meta name="author" content="Mohammad Jawad Barati" />
+    <style>
+      body {
+        font-family: Helvetica, Arial, sans-serif;
+        font-size: 12px;
+      }
+
+      h1 {
+        font-size: 2.6em;
+      }
+
+      h2 {
+        font-size: 2.4em;
+      }
+
+      p {
+        font-size: 1.2em;
+      }
+    </style>
+    <script>
+      /**
+       *
+       * @param {number} size
+       */
+      function sizeFactory(size) {
+        return function () {
+          document.body.style.fontSize = `${size}px`;
+        };
+      }
+
+      const size12 = sizeFactory(12);
+      const size14 = sizeFactory(14);
+      const size16 = sizeFactory(16);
+    </script>
+  </head>
+  <body>
+    <main>
+      <h1>Closures in JavaScript</h1>
+      <p>Written by yours truly: Mohammad Jawad Barati</p>
+      <h2>Change the font size dynamically</h2>
+      <p>
+        Here by clicking on this button you can change the font size
+        <button onclick="size12()">12</button>
+        <button onclick="size14()">14</button>
+        <button onclick="size16()">16</button>
+      </p>
+    </main>
+  </body>
+</html>

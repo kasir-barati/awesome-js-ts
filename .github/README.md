@@ -5,7 +5,10 @@ Here I would share with you all sort of awesome things about TS/JS. E.g. Regex, 
 # How to test it:
 
 1. `npm ci` or `pnpm i --frozen-lockfile`
-2. `pnpm run test:watch`
+2. **Optional**: Install 3rd party libs necessary for Cypress `pacman -S gtk2 gtk3 alsa-lib xorg-server-xvfb libxss nss libnotify`.
+3. To run:
+   1. Unit tests: `pnpm run test:watch`.
+   2. E2E tests: `pnpm run cy:open`.
 
 ## Regex
 

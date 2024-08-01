@@ -10,9 +10,9 @@ Beware of using `genericRegexForPassportNumber` regex. Why? because it passes mo
 
 # Wrong regex for those who wants to learn regex
 
--   `/^(?:[A-Z]{3}[0-9]{4,}$)|(?:[A-Z]{2}[0-9]{5,}$)|(?:[A-Z]{1}[0-9]{6,}$)|(?:^[0-9]{7,}$)/i`
--   `/^(?:[A-Z 0-9]{0,3})[0-9]{6,10}$/i`
--   `/^[a-zA-Z]{0,3}[0-9]{6,10}$/i`
+- `/^(?:[A-Z]{3}[0-9]{4,}$)|(?:[A-Z]{2}[0-9]{5,}$)|(?:[A-Z]{1}[0-9]{6,}$)|(?:^[0-9]{7,}$)/i`
+- `/^(?:[A-Z 0-9]{0,3})[0-9]{6,10}$/i`
+- `/^[a-zA-Z]{0,3}[0-9]{6,10}$/i`
 
 # Germany
 

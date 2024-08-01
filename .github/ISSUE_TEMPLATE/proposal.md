@@ -4,7 +4,6 @@ about: You can use this template to tell us what is your idea/notion about somet
 title: proposal
 labels: enhancement
 assignees: ''
-
 ---
 
 **Full name:**
@@ -15,9 +14,9 @@ assignees: ''
 
 **Proposal type:**
 
--   [ ] Existing feature request
--   [ ] New feature proposal
--   [ ] Refactor existing feature
+- [ ] Existing feature request
+- [ ] New feature proposal
+- [ ] Refactor existing feature
 
 **Proposal title:** (feature name)
 
@@ -37,19 +36,19 @@ assignees: ''
 
 ## Use cases and implementation in popular validators:
 
--   [class-validator package][class-validator]:
+- [class-validator package][class-validator]:
 
 ```ts
 // implementation;
 ```
 
--   [express-validator package][express-validator]
+- [express-validator package][express-validator]
 
 ```ts
 // implementation;
 ```
 
--   [validatorjs package][validatorjs]
+- [validatorjs package][validatorjs]
 
 ```ts
 // implementation;

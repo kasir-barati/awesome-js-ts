@@ -4,9 +4,24 @@
   "bracketSpacing": true,
   "endOfLine": "lf",
   "printWidth": 70,
-  "quoteProps": "as-needed",
+  "quoteProps": "consistent",
   "tabWidth": 2,
   "trailingComma": "all",
   "semi": true,
-  "singleQuote": true
+  "singleQuote": true,
+  "overrides": [
+    {
+      "files": ["*.yml", "*.yaml"],
+      "options": {
+        "singleQuote": false,
+        "tabWidth": 2
+      }
+    },
+    {
+      "files": "*.md",
+      "options": {
+        "tabWidth": 2
+      }
+    }
+  ]
 }

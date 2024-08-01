@@ -4,5 +4,5 @@ I advise you to use a 3rd party lib like [google-libphonenumber](https://www.npm
 
 # Wrong regexs
 
--   `/^[a-zA-Z0-9\-().\s]{10,15}$/`
--   `/^\d{7,}$/`
+- `/^[a-zA-Z0-9\-().\s]{10,15}$/`
+- `/^\d{7,}$/`

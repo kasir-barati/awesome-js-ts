@@ -21,7 +21,7 @@
 
 <table>
   <caption>
-    A quick run down for the most important keywords, presented in a comparable manner.
+    A quick run down for the ones I felt are more common.
   </caption>
   <thead>
     <tr>
@@ -317,3 +317,7 @@
 # Refs
 
 [The different types of software testing](https://www.atlassian.com/continuous-delivery/software-testing/types-of-software-testing)
+
+# Also published:
+
+- At [dev.to](https://dev.to/kasir-barati/whats-testing-in-software-development-5b61)

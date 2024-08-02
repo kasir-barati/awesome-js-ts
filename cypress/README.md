@@ -54,10 +54,11 @@
 
   1. Set up the application state.
   2. Take an action.
-  3. Make an assertion about the `resulting application state.
+  3. Make an assertion about the resulting application state.
 
-- The rule of thumb for chaining: If you **perform an action**, **end the chain of commands there** and start fresh from `cy`.
+- The rule of thumb for chaining:
 
+  - If you **perform an action**, **end the chain of commands there** and start fresh from `cy`.
   - Actions can be navigating the page, clicking a button or scrolling the viewport.
 
 - Cypress commands are asynchronous (**NOT JS promises**).
@@ -91,7 +92,7 @@
 # Querying Elements
 
 - Same syntax as jQuery.
-- Retries to find the element in DOM, util it reaches its timeout.
+- Retries to find the element in DOM, until it reaches its timeout.
   - The [default `timeout` value](https://docs.cypress.io/guides/core-concepts/introduction-to-cypress#Default-Values) is 4 seconds for **most** commands.
     - **You don't want to make it "extra long, just in case".**
     - The `timeout` parameter always goes inside the command.
@@ -101,18 +102,17 @@
     // THE CORRECT WAY
     cy.get('.selector', { timeout: 1000 }).should('be.visible');
     ```
-  - Use `Cypress.$` if you wanna skip this builtin functionality.
+  - Use `Cypress.$` if you wanna skip this built-in functionality.
 
 ## `cy.contains()`
 
 - Look elements up by their content.
 - E.g. `cy.get('main').contains('New Post')` finds an element within `main` element containing the text 'New Post'.
-- In case you're app is multilingual.
+- In case you're app is multilingual you probably need to do a bit [more work](https://stackoverflow.com/a/60091081/8784518) or some other tricks. My point is that you need to take that into account.
 
 # Assertion
 
 - Commands that enable you to describe the desired state of your application.
-  - Ensure your element has a specific attribute.
   ```ts
   cy.get(':checkbox').should('be.disabled');
   cy.get('form').should('have.class', 'form-horizontal');
@@ -126,11 +126,11 @@
   cy.get('.title').type('My Awesome Project');
   cy.get('form').submit();
   ```
-  This is because many commands have [built-in Implicit](https://docs.cypress.io/guides/core-concepts/introduction-to-cypress#For-instance) Assertions which offer you a high level of confidence that your application is working as expected.
+  This is because many commands have [built-in implicit](https://docs.cypress.io/guides/core-concepts/introduction-to-cypress#For-instance) Assertions which offer you a high level of confidence that your application is working as expected.
 - `.and` is the same as `.should`. Added for readability sake:
   ```ts
   cy.get('#header a')
     .should('have.class', 'active')
     .and('have.attr', 'href', '/users');
   ```
-- **Idempotency**: when you've passed a callback to `.should` it should be idempotent. Remember, Cypress retries a should multiple times in case of failure. So if your code has side-effects then your test won't be deterministic and reliable.
+- **Idempotency**: when you've passed a callback to `.should` it should be idempotent. Remember, Cypress retries a `.should` multiple times in case of failure. So if your code has side-effects then your test won't be deterministic and reliable.

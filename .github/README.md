@@ -10,6 +10,11 @@ Here I would share with you all sort of awesome things about TS/JS. E.g. Regex, 
    1. Unit tests: `pnpm run test:watch`.
    2. E2E tests: `pnpm run cy:open`.
 
+## Learn more about testing
+
+- [What is testing all about?](./docs/testing.md)
+- [Cypress](../cypress/README.md)
+
 ## Regex
 
 An on going process to keep an up to date and complete list - Obviously as much as it is possible - Regex for almost every thing.

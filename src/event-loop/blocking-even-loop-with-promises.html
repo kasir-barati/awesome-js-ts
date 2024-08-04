@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
+    <title>Document</title>
+    <script>
+      function recursivePromiseLoop() {
+        Promise.resolve().then(recursivePromiseLoop);
+      }
+    </script>
+  </head>
+  <body>
+    <figure style="margin-bottom: 2em">
+      <img
+        style="float: left; margin-right: 2em"
+        src="./blocking-event-loop-with-promises.gif"
+      />
+      <figcaption>
+        <p style="padding-top: 2em">
+          Some random gif I picked just to demonstrate how promises
+          can block the even loop. Try to click on the button and then
+          select this text. In my case the gif did not stop working,
+          but soon my browser crashed and asked me to kill the page or
+          wait a bit longer.
+        </p>
+      </figcaption>
+    </figure>
+    <button onclick="recursivePromiseLoop()">
+      Create new promises forever and push them to the microtask
+      queue.
+    </button>
+  </body>
+</html>

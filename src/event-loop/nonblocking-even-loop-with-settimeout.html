@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
+    <title>Document</title>
+    <script>
+      function recursiveSetTimeoutLoop() {
+        setTimeout(recursiveSetTimeoutLoop);
+      }
+    </script>
+  </head>
+  <body>
+    <figure style="margin-bottom: 2em">
+      <img
+        style="float: left; margin-right: 2em"
+        src="./blocking-event-loop-with-promises.gif"
+      />
+      <figcaption>
+        <p style="padding-top: 2em">
+          Some random gif I picked just to demonstrate how setTimeout
+          won't block the even loop. Try to click on the button and
+          then select this text. Everything remains functional and
+          responsive regardless of the infinite loop that we've
+          created with calling
+          <code>recursiveSetTimeoutLoop</code> recursively.
+        </p>
+      </figcaption>
+    </figure>
+    <button onclick="recursiveSetTimeoutLoop()">
+      Create new promises forever and push them to the microtask
+      queue.
+    </button>
+  </body>
+</html>

@@ -105,11 +105,15 @@ button.addEventListener('click', () => {
 // button.click();
 ```
 
+#### YouTube Video
+
 [![microtasks vs tasks vs animation callbacks in JS](https://img.youtube.com/vi/RnFtZciOAxg/0.jpg)](https://www.youtube.com/watch?v=RnFtZciOAxg)
 
 Here it's showing how much it is important this things since when we are testing our app using Cypress. Since we get totally different results. Especially in cases that we are doing things such as `event.preventDefault`.
 
 ## Tasks VS Microtasks VS Animation callbacks
+
+### YouTube Video
 
 [![How microtasks behavior change when user interact with the browser whereas programmatic](https://img.youtube.com/vi/yqzTbm-vJ78/0.jpg)](https://www.youtube.com/watch?v=yqzTbm-vJ78)
 

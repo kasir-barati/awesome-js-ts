@@ -105,36 +105,29 @@ button.addEventListener('click', () => {
 // button.click();
 ```
 
-<figure>
-  <iframe width="560" height="315" src="https://www.youtube.com/embed/RnFtZciOAxg?si=cDtK97RP5Qw1KB80" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-  <figcaption>
-    Here it's showing how much it is important this things since when we are testing our app using Cypress. Since we get totally different results. Especially in cases that we are doing things such as <code>event.preventDefault</code>
-  </figcaption>
-</figure>
+[![microtasks vs tasks vs animation callbacks in JS](https://img.youtube.com/vi/RnFtZciOAxg/0.jpg)](https://www.youtube.com/watch?v=RnFtZciOAxg)
 
-![Microtask and sync](./)
+Here it's showing how much it is important this things since when we are testing our app using Cypress. Since we get totally different results. Especially in cases that we are doing things such as `event.preventDefault`.
 
 ## Tasks VS Microtasks VS Animation callbacks
 
-<figure>
-  <iframe width="560" height="315" src="https://www.youtube.com/embed/yqzTbm-vJ78?si=BnS_XaaZKN0l6T1a" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-  <figcaption>
-    Here in each iteration event loop:
-    <ol>
-      <li>
-        Executes one task from "tasks queue".
-      </li>
-      <li>
-        Execute all of the "Animation callbacks", except the one that was added after it started to execute them.
-      </li>
-      <li>
-        But as for the microtasks, it will execute all of them and also the ones that was added after it started to execute them. That's exactly why our browser crashes if we have infinite promises.
-        <br/>
-        So event loop only starts next iteration when the microtasks queue is emptied.
-      </li>
-    </ol>
-  </figcaption>
-</figure>
+[![How microtasks behavior change when user interact with the browser whereas programmatic](https://img.youtube.com/vi/yqzTbm-vJ78/0.jpg)](https://www.youtube.com/watch?v=yqzTbm-vJ78)
+
+Here in each iteration event loop:
+
+<ol>
+  <li>
+    Executes one task from "tasks queue".
+  </li>
+  <li>
+    Execute all of the "Animation callbacks", except the one that was added after it started to execute them.
+  </li>
+  <li>
+    But as for the microtasks, it will execute all of them and also the ones that was added after it started to execute them. That's exactly why our browser crashes if we have infinite promises.
+    <br/>
+    So event loop only starts next iteration when the microtasks queue is emptied.
+  </li>
+</ol>
 
 # Glossary
 

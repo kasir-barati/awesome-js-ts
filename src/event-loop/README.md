@@ -8,14 +8,14 @@
   - Networking.
   - User interaction.
   - And many other things.
-- "Run-to-completion": cannot pause a function execution. Can potentially block user interaction with the app (Your ReactJS app).
+- "Run-to-completion": cannot pause a function execution. Can potentially block user interaction with the app (e.g. your ReactJS app).
 - Event in JS can happen asynchronously/synchronously.
   - Async: when we've defined a listener for an event.
   - Sync: When calling `.click()` method for example.
 
 > [!TIP]
 >
-> Never blocking nature of JS. Even when we query something from database, it registers callback and then starts executing the other tasks in the stack.
+> Never blocking nature of JS: Even when we query something from database, it registers callback and then starts executing the other tasks in the stack.
 
 ## Stack
 
@@ -31,7 +31,7 @@
 - A JavaScript runtime uses a message queue.
 - Has an associated function that gets called to handle the message AKA _callback_.
 - The runtime starts handling the messages on the queue, starting with the first one in the queue.
-  - Are sets, not queues, because the event loop processing model grabs the first runnable task from the chosen queue, instead of dequeuing the first task.
+  - Task queues are sets, not queues, because the event loop processing model grabs the first runnable task from the chosen queue, instead of dequeuing the first task.
 - Does things like:
   - Callbacks.
   - Parsing (parsing html).
@@ -62,15 +62,15 @@ baz();
 
 - Things that allow the <a href="#agentGlossary">agent</a> to go through the task queue before attending to them.
 - E.g. `setTimeout`.
-- Try to test [this example](./nonblocking-even-loop-with-settimeout.html) on your browser.
+- Try to test [this example](./nonblocking-even-loop-with-settimeout.html) in your own browser.
 
 ## Microtask
 
-- Do not allow <a href="#agentGlossary">agent</a> to go though the tasks queued up in the task queue.
+- Do not allow <a href="#agentGlossary">agent</a> to go through the tasks queued up in the task queue.
 - JS should complete all of these before giving the control back to event loop.
 - E.g. JS promises.
 - Just because they are called async does not mean that promises will yield to other parts of event loop which ain't sync.
-- Try to test [this example](./blocking-even-loop-with-promises.html) on your browser.
+- Try to test [this example](./blocking-even-loop-with-promises.html) in your own browser.
 
 ## Microtask VS Macrotask
 
@@ -117,7 +117,7 @@ Here it's showing how much it is important this things since when we are testing
 
 [![How microtasks behavior change when user interact with the browser whereas programmatic](https://img.youtube.com/vi/yqzTbm-vJ78/0.jpg)](https://www.youtube.com/watch?v=yqzTbm-vJ78)
 
-Here in each iteration event loop:
+Here in each event loop iteration:
 
 <ol>
   <li>
@@ -193,7 +193,7 @@ Here in each iteration event loop:
         A list.
       </li>
       <li>
-        A list with the additional semantic that it must not contain the same item twice.
+        With the additional semantic that it must not contain the same item twice.
       </li>
     </ul>
   </dd>
@@ -206,7 +206,7 @@ Here in each iteration event loop:
         A list.
       </li>
       <li>
-        A list, but conventionally, the following operations are used to operate on it, instead of using append, prepend, or remove.
+        Conventionally, the following operations are used to operate on it, instead of using append, prepend, or remove.
         <ul>
           <li>
             To <i>enqueue</i> in a queue is to append to it.

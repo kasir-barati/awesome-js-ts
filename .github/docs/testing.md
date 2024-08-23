@@ -300,7 +300,7 @@
 
 - A technique.
 
-| Pros                                                                                                                         | Cons                                         |
+| Aspects                                                                                                                      | Considerations                               |
 | ---------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------- |
 | Ensures the app is functioning as a cohesive whole.                                                                          | More difficult to set up, run, and maintain  |
 | Tests are written in code with an API that **simulates the steps** that a real user would take.                              | Provision testing infrastructure in CI       |

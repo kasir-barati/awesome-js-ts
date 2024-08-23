@@ -146,7 +146,7 @@
             A new build is made & we wanna decide whether or not you can run more expensive tests.
           </li>
           <li>
-            A deployment to make sure that they application is running properly in the newly deployed environment.
+            A deployment to make sure that the application is running properly in the newly deployed environment.
           </li>
         </ul>
       </li>

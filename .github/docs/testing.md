@@ -321,3 +321,7 @@
 # Also published:
 
 - At [dev.to](https://dev.to/kasir-barati/whats-testing-in-software-development-5b61)
+
+# Learn more
+
+- [Understanding test strategy in software testing](https://youtu.be/BHq8ut1PzF4?si=ugGIHhpDEuUSOMJK).

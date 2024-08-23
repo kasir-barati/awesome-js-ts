@@ -241,7 +241,7 @@
     - What's input and output.
 - White-box:
   - Focuses on code coverage:
-    - Path coverage: `3 / 0` throws an error for an additional operation.
+    - Path coverage: `3 / 0` throws an error for a division operation.
     - Statement coverage: `3 + 3` equals `6` for an additional operation.
   - Analyze the
     - Internal structures the used data structures.

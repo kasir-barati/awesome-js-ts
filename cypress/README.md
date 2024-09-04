@@ -133,4 +133,4 @@
     .should('have.class', 'active')
     .and('have.attr', 'href', '/users');
   ```
-- **Idempotency**: when you've passed a callback to `.should` it should be idempotent. Remember, Cypress retries a `.should` multiple times in case of failure. So if your code has side-effects then your test won't be deterministic and reliable.
+- **Idempotency**: when you've passed a callback to `.should` it should be idempotent. Remember, Cypress retries a `.should` multiple times in case of failure. So if your code has side-effects then your test won't be deterministic and reliable. Learn more about it [here](https://github.com/kasir-barati/nestjs-materials/tree/main/.github/docs/designing-restful-api#idempotency).

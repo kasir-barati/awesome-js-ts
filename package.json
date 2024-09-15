@@ -30,6 +30,7 @@
   "homepage": "https://github.com/kasir-barati/awesome-js-ts#readme",
   "devDependencies": {
     "@jest/types": "^29.6.3",
+    "@types/amqplib": "^0.10.5",
     "@types/google-libphonenumber": "^7.4.30",
     "@types/jest": "^29.5.12",
     "cypress": "^13.13.2",
@@ -41,6 +42,8 @@
     "typescript": "^5.5.4"
   },
   "dependencies": {
+    "amqplib": "^0.10.4",
+    "dotenv": "^16.4.5",
     "google-libphonenumber": "^3.2.38"
   }
 }

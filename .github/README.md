@@ -18,3 +18,7 @@ Here I would share with you all sort of awesome things about TS/JS. E.g. Regex, 
 ## Regex
 
 An on going process to keep an up to date and complete list - Obviously as much as it is possible - Regex for almost every thing.
+
+## RabbitMQ
+
+How you can connect and create channels, queues, and different exchanges. Documented [here](./docs/rabbitmq.md) and sample codes are [here](../src/rabbitmq/).

@@ -17,6 +17,9 @@ importers:
       google-libphonenumber:
         specifier: ^3.2.38
         version: 3.2.38
+      reflect-metadata:
+        specifier: ^0.2.2
+        version: 0.2.2
     devDependencies:
       '@jest/types':
         specifier: ^29.6.3
@@ -1478,6 +1481,9 @@ packages:
 
   readable-stream@1.1.14:
     resolution: {integrity: sha512-+MeVjFf4L44XUkhM1eYbD8fyEsxcV81pqMSR5gblfcLCHfZvbrqy4/qYHE+/R5HoBUT11WV5O08Cr1n3YXkWVQ==}
+
+  reflect-metadata@0.2.2:
+    resolution: {integrity: sha512-urBwgfrvVP/eAyXx4hluJivBKzuEbSQs9rKWCrCkbSxNv8mxPcUZKeuoF3Uy4mJl3Lwprp6yy5/39VWigZ4K6Q==}
 
   request-progress@3.0.0:
     resolution: {integrity: sha512-MnWzEHHaxHO2iWiQuHrUPBi/1WeBf5PkxQqNyNvLl9VAYSdXkP8tQ3pBSeCPD+yw0v0Aq1zosWLz0BdeXpWwZg==}
@@ -3564,6 +3570,8 @@ snapshots:
       inherits: 2.0.4
       isarray: 0.0.1
       string_decoder: 0.10.31
+
+  reflect-metadata@0.2.2: {}
 
   request-progress@3.0.0:
     dependencies:

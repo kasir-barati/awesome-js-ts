@@ -107,3 +107,8 @@ dist
 
 # TernJS port file
 .tern-port
+
+
+
+.nx/cache
+.nx/workspace-data

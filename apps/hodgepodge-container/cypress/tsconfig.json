@@ -1,0 +1,9 @@
+{
+  "extends": "../../../tsconfig.base.json",
+  "compilerOptions": {
+    "noEmit": true,
+    "types": ["cypress"],
+    "module": "NodeNext"
+  },
+  "exclude": ["node_modules", "./cypress.config.ts", "**/*.cy.tsx"]
+}

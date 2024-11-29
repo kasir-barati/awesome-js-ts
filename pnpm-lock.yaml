@@ -36,9 +36,6 @@ importers:
       cypress:
         specifier: ^13.13.2
         version: 13.13.2
-      husky:
-        specifier: ^9.1.4
-        version: 9.1.4
       jest:
         specifier: ^29.7.0
         version: 29.7.0(@types/node@22.0.2)(ts-node@10.9.2(@types/node@22.0.2)(typescript@5.5.4))
@@ -969,11 +966,6 @@ packages:
   human-signals@2.1.0:
     resolution: {integrity: sha512-B4FFZ6q/T2jhhksgkbEW3HBvWIfDW85snkQgawt07S7J5QXTk6BkNV+0yAeZrM5QpMAdYlocGoljn0sJ/WQkFw==}
     engines: {node: '>=10.17.0'}
-
-  husky@9.1.4:
-    resolution: {integrity: sha512-bho94YyReb4JV7LYWRWxZ/xr6TtOTt8cMfmQ39MQYJ7f/YE268s3GdghGwi+y4zAeqewE5zYLvuhV0M0ijsDEA==}
-    engines: {node: '>=18'}
-    hasBin: true
 
   ieee754@1.2.1:
     resolution: {integrity: sha512-dcyqhDvX1C46lXZcVqCpK+FtMRQVdIMN6/Df5js2zouUsqG7I6sFxitIC+7KYK29KdXOLHdu9zL4sFnoVQnqaA==}
@@ -2922,8 +2914,6 @@ snapshots:
   human-signals@1.1.1: {}
 
   human-signals@2.1.0: {}
-
-  husky@9.1.4: {}
 
   ieee754@1.2.1: {}
 

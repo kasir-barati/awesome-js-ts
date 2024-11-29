@@ -44,7 +44,9 @@
     "@types/google-libphonenumber": "^7.4.30",
     "@types/jest": "^29.5.14",
     "@types/node": "~18.16.9",
+    "@types/ws": "^8.5.13",
     "cypress": "^13.16.0",
+    "dotenv": "^16.4.5",
     "esbuild": "^0.19.2",
     "eslint": "^9.8.0",
     "eslint-config-prettier": "^9.0.0",
@@ -61,8 +63,10 @@
   "dependencies": {
     "amqplib": "^0.10.5",
     "axios": "^1.6.0",
-    "dotenv": "^16.4.5",
     "google-libphonenumber": "^3.2.39",
-    "reflect-metadata": "^0.2.2"
+    "mongoose": "^8.8.3",
+    "openai": "^4.73.1",
+    "reflect-metadata": "^0.2.2",
+    "ws": "^8.18.0"
   }
 }

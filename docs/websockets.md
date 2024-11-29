@@ -50,11 +50,8 @@ Done, now:
 
 ## How it is done in practice
 
-1. We need a backend:
-   1. ```shell
-      pnpm add ws
-      pnpm add -D @types/ws
-      ```
+1. We need a backend: `apps/websocket-backend`:
+2. We need a client: `apps/websocket-client`.
 
 import { Server } from 'ws';
 

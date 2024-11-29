@@ -13,7 +13,8 @@
       },
       "exclude": [
         "apps/websocket-backend-e2e/**/*",
-        "apps/socketio-e2e/**/*"
+        "apps/socketio-e2e/**/*",
+        "apps/chat-backend-e2e/**/*"
       ]
     },
     {

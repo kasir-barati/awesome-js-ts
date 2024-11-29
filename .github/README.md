@@ -2,6 +2,10 @@
 
 Here I would share with you all sort of awesome things about TS/JS. E.g. Regex, closure, etc
 
+> [!CAUTION]
+>
+> Keep the [docs](#docs) section in sync with [`index.md`](../index.md).
+
 # How to test it:
 
 1. `npm ci` or `pnpm i --frozen-lockfile`
@@ -10,19 +14,11 @@ Here I would share with you all sort of awesome things about TS/JS. E.g. Regex, 
    1. Unit tests: `pnpm run test:watch`.
    2. E2E tests: `pnpm run cy:open`.
 
-## Learn more about testing
+## Docs
 
-- [What is testing all about?](./docs/testing.md)
+- [What is testing all about?](../docs/testing.md)
 - [Cypress](../cypress/README.md)
-
-## Regex
-
-An on going process to keep an up to date and complete list - Obviously as much as it is possible - Regex for almost every thing.
-
-## RabbitMQ
-
-How you can connect and create channels, queues, and different exchanges. Documented [here](./docs/rabbitmq.md) and sample codes are [here](../src/rabbitmq/).
-
-## Decorators
-
-Decorators in Typescript and reflect are powerful tools, You can delve into this world of astonishing capabilities [here](../src/decorators/README.md).
+- [Regex](../src/regex/README.md)
+- [RabbitMQ](../docs/rabbitmq.md).
+  - [Examples are here](../src/rabbitmq/).
+- [Decorators in TS](../src/decorators/README.md).

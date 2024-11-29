@@ -11,7 +11,10 @@
       "options": {
         "targetName": "jest:test"
       },
-      "exclude": ["apps/websocket-backend-e2e/**/*"]
+      "exclude": [
+        "apps/websocket-backend-e2e/**/*",
+        "apps/socketio-e2e/**/*"
+      ]
     },
     {
       "plugin": "@nx/cypress/plugin",

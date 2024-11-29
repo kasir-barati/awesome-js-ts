@@ -53,6 +53,15 @@ Done, now:
 1. We need a backend: `apps/websocket-backend`:
 2. We need a client: `apps/websocket-client`.
 
-import { Server } from 'ws';
+> [!IMPORTANT]
+>
+> `ws` library is good and all but you need to reinvent the wheel many times. Like broadcasting a message and things like that.
+>
+> `ws` is a low-level library. But for a real world app most of the times we need something a bit more mature.
 
-const server = new Server();
+### [`socket.io`](https://socket.io/)
+
+- Alternatives to socket.io:
+  - [GraphQL subscriptions](https://github.com/kasir-barati/graphql/blob/main/docs/subscription.md).
+  - [Pusher](https://pusher.com/).
+- Might like to learn about some of [the challenges of building a realtime app](https://www.infoq.com/articles/challenges-realtime-chat-service-pusher/).

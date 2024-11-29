@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
+    <title>Socket.io Client</title>
+    <script defer src="./index.js"></script>
+    <link rel="stylesheet" href="./index.css" />
+    <script
+      src="https://cdn.socket.io/4.8.1/socket.io.min.js"
+      integrity="sha384-mkQ3/7FUtcGyoppY6bz/PORYoGqOl7/aSUMn2ymDOJcapfS6PHqxhRTMh1RR0Q6+"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <section class="history">
+      <h2>History</h2>
+      <span class="at-sign-for-username" role="none">
+        <input type="text" class="username" />
+      </span>
+    </section>
+    <form class="form" action="#">
+      <label for="message">
+        👇 Send a message over WebSocket to server 👇
+      </label>
+      <textarea id="message" class="message" autofocus></textarea>
+      <button
+        class="send"
+        type="submit"
+        onclick="handleClickOnSend(event)"
+      >
+        📨 Send the message to your server! 📨
+      </button>
+    </form>
+  </body>
+</html>

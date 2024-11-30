@@ -1,4 +1,4 @@
-import { DefaultEventsMap } from 'socket.io';
+import type { DefaultEventsMap } from 'socket.io';
 import { io, Socket } from 'socket.io-client';
 
 export function setupSocket(backendUrl: string) {

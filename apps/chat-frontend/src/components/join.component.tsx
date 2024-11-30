@@ -3,6 +3,7 @@ import { isEmptyString, JOIN_ROOM, JoinRoomPayload } from 'shared';
 import type { DefaultEventsMap } from 'socket.io';
 import { Socket } from 'socket.io-client';
 import { useAppContext } from '../app/app.context';
+import styles from './join.module.css';
 
 interface JoinProps {
   socket: Socket<DefaultEventsMap, DefaultEventsMap>;
@@ -12,13 +13,15 @@ export function Join({ socket }: Readonly<JoinProps>) {
   const [username, setUsername] = useState<string>('');
   const [roomId, setRoomId] = useState<string>('');
   const { dispatch } = useAppContext();
+
   function handleClick(event: MouseEvent<HTMLButtonElement>) {
     event.preventDefault();
 
-    if (isEmptyString(roomId) && isEmptyString(username)) {
+    if (isEmptyString(roomId) || isEmptyString(username)) {
       return;
     }
 
+    socket.connect();
     dispatch({
       type: 'set',
       payload: {
@@ -43,7 +46,7 @@ export function Join({ socket }: Readonly<JoinProps>) {
   }
 
   return (
-    <>
+    <section className={styles.section}>
       <h1>Join a chat</h1>
       <form action="#">
         <input
@@ -67,6 +70,6 @@ export function Join({ socket }: Readonly<JoinProps>) {
           Let's chat!
         </button>
       </form>
-    </>
+    </section>
   );
 }

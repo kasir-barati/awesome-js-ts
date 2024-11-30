@@ -1,0 +1,30 @@
+.section {
+  padding-inline: 1rem;
+  display: flex;
+  gap: 0.25rem;
+  flex-direction: column;
+  margin-block: 1rem;
+  border-block: 0.0625rem solid white;
+  padding-block: 1rem;
+
+  h2 {
+    color: orangered;
+    font-size: 1.25rem;
+
+    .section__room-id {
+      color: navy;
+      text-shadow: 0.0625rem 0.0625rem 0.0625rem gray;
+    }
+  }
+  p {
+    inline-size: 50%;
+    padding-block: 0.25rem;
+    padding-inline: 0.25rem;
+  }
+  .mine {
+    background-color: gray;
+    border-radius: 0.25rem;
+    text-align: right;
+    align-self: flex-end;
+  }
+}

@@ -22,27 +22,35 @@ app.use(
 );
 
 const server = createServer(app);
-const socketioServer = new Server(server, {
+const io = new Server(server, {
   cors: {
     origin,
   },
 });
 
-socketioServer.on('connection', (socket) => {
+io.on('connection', (socket) => {
   console.log('Connection established!');
 
-  socket.on(JOIN_ROOM, ({ roomId, username }: JoinRoomPayload) => {
-    console.log('Joined to ' + roomId);
+  socket.on(
+    JOIN_ROOM,
+    async ({ roomId, username }: JoinRoomPayload) => {
+      console.log('Joined to room: ' + roomId);
 
-    socket.join(roomId);
-  });
+      // Adds the client (with this socket) to the room they have specified!
+      await socket.join(roomId);
+    },
+  );
   socket.on(SENT_MESSAGE, (payload: MessagePayload) => {
     console.log('Received message:');
     console.group();
     console.log(payload);
     console.groupEnd();
 
-    socket.to(payload.roomId).emit(MESSAGE_BROADCASTED, payload);
+    // broadcast to clients that have joined the given room.
+    // NOTE: socket.to(payload.roomId).emit(MESSAGE_BROADCASTED, payload) won\t do the job
+    // Because according to the doc, "the socket itself being excluded". and we do not want that
+    // Ref: https://socket.io/docs/v4/server-api/#sockettoroom
+    io.to(payload.roomId).emit(MESSAGE_BROADCASTED, payload);
   });
   socket.on('disconnect', () => {
     console.log('User disconnected!');

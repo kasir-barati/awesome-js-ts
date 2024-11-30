@@ -6,7 +6,9 @@ import { Show } from '../components/show.component';
 import { useAppContext } from './app.context';
 import styles from './app.module.css';
 
-const socket = io(import.meta.env.VITE_BACKEND_URL);
+const socket = io(import.meta.env.VITE_BACKEND_URL, {
+  autoConnect: false,
+});
 
 export default function App() {
   const { state } = useAppContext();

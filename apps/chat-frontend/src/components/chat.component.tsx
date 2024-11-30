@@ -1,4 +1,4 @@
-import { MouseEvent, useRef } from 'react';
+import { KeyboardEvent, MouseEvent, useRef } from 'react';
 import {
   assertExists,
   isEmptyString,
@@ -8,19 +8,25 @@ import {
 import type { DefaultEventsMap } from 'socket.io';
 import { Socket } from 'socket.io-client';
 import { useAppContext } from '../app/app.context';
+import styles from './chat.module.css';
 
 interface ChatProps {
   socket: Socket<DefaultEventsMap, DefaultEventsMap>;
 }
 
 export function Chat({ socket }: Readonly<ChatProps>) {
-  const messageInputRef = useRef<HTMLInputElement>(null);
+  const messageInputRef = useRef<HTMLTextAreaElement>(null);
   const {
     state: { roomId, username },
   } = useAppContext();
 
-  function handleClick(event: MouseEvent<HTMLButtonElement>) {
-    event.preventDefault();
+  function handleKeyDown(event: KeyboardEvent<HTMLTextAreaElement>) {
+    if (isCtrlEnter(event)) {
+      handleClick();
+    }
+  }
+  function handleClick(event?: MouseEvent<HTMLButtonElement>) {
+    event?.preventDefault();
 
     assertExists(messageInputRef.current);
 
@@ -42,19 +48,23 @@ export function Chat({ socket }: Readonly<ChatProps>) {
   }
 
   return (
-    <>
+    <section className={styles.section}>
       <form action="#">
-        <input
+        <textarea
           ref={messageInputRef}
-          type="text"
           name="message"
           placeholder="Start typing..."
           autoFocus
-        />
-        <button type="submit" onClick={handleClick}>
-          Let's chat!
+          onKeyDown={handleKeyDown}
+        ></textarea>
+        <button aria-label="Send" type="submit" onClick={handleClick}>
+          &#8617;
         </button>
       </form>
-    </>
+    </section>
   );
+}
+
+function isCtrlEnter(event: KeyboardEvent<HTMLTextAreaElement>) {
+  return event.ctrlKey && event.key === 'Enter';
 }

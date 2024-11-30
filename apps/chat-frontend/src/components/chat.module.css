@@ -1,0 +1,53 @@
+.section {
+  padding-inline: 1rem;
+  gap: 1rem;
+  display: flex;
+  flex-direction: column;
+  margin-block: 1rem;
+
+  form {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    position: relative;
+
+    textarea {
+      inline-size: 100%;
+      block-size: 6rem;
+      resize: none;
+      padding-inline: 1rem;
+      padding-block: 1rem;
+      border-radius: 0.5rem;
+      border-inline: 0.125rem solid purple;
+      border-block: 0.125rem solid purple;
+      transition: all 0.5s linear 0s;
+      color: black;
+      font-family: monospace;
+      background-color: #7f7f7f;
+      color: white;
+
+      &:focus-visible {
+        outline-style: none;
+        border-color: turquoise;
+      }
+    }
+    button {
+      background-color: yellow;
+      border-radius: 0.5rem;
+      cursor: pointer;
+      position: absolute;
+      padding-inline: 1rem;
+      padding-block: 0.25rem;
+      inset-block-end: 1rem;
+      inset-inline-end: 1rem;
+      transition: all 0.5s linear 0s;
+      box-shadow: 0.125rem 0.125rem 0.125rem purple;
+
+      &:hover,
+      &:focus-visible {
+        outline-style: none;
+        box-shadow: -0.125rem 0.125rem 0.125rem orange;
+      }
+    }
+  }
+}

@@ -1,0 +1,42 @@
+.section {
+  padding-inline: 1rem;
+  block-size: 100vh;
+  gap: 1rem;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+
+  h1 {
+    font-size: 2rem;
+    color: orangered;
+    font-family: 'IBM Plex Mono';
+  }
+  form {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+
+    input {
+      inline-size: 100%;
+      padding-inline: 1rem;
+      padding-block: 1rem;
+      border-radius: 0.5rem;
+      border-inline: 0.125rem solid purple;
+      border-block: 0.125rem solid purple;
+      transition: all 0.5s linear 0s;
+      color: black;
+      font-family: monospace;
+
+      &:focus-visible {
+        outline-style: none;
+        border-color: turquoise;
+      }
+    }
+    button {
+      background-color: yellow;
+      border-radius: 1rem;
+      cursor: pointer;
+    }
+  }
+}

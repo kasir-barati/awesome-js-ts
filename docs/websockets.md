@@ -67,3 +67,4 @@ Done, now:
 - Might like to learn about some of [the challenges of building a realtime app](https://www.infoq.com/articles/challenges-realtime-chat-service-pusher/).
 - To see how you acn use `socket.io` see our `chat-backend` and `chat-frontend` app.
   - BTW I used react context in the frontend app. There is a great article about it [here](https://kentcdodds.com/blog/how-to-use-react-context-effectively). I encourage you and my future self to read it.
+  - Learn how to work with `socket.io-client` in ReactJS [here](https://socket.io/how-to/use-with-react).

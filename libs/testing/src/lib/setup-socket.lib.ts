@@ -4,19 +4,19 @@ import { io, Socket } from 'socket.io-client';
 export function setupSocket(backendUrl: string) {
   return new Promise<Socket<DefaultEventsMap, DefaultEventsMap>>(
     (resolve, reject) => {
-      // create socket for communication
       const socket: Socket<DefaultEventsMap, DefaultEventsMap> = io(
         backendUrl,
         {
+          forceNew: true,
+          autoConnect: true,
           reconnectionDelay: 5000,
           reconnectionDelayMax: 5000,
-          forceNew: true,
+          transports: ['websocket'],
         },
       );
 
-      // define event handler for sucessfull connection
-      socket.on('connection', () => {
-        console.info('connected');
+      // Listen to the predefined event for successful connection
+      socket.on('connect', () => {
         resolve(socket);
       });
 

@@ -62,7 +62,7 @@ Done, now:
 ### [`socket.io`](https://socket.io/)
 
 - Alternatives to socket.io:
-  - [GraphQL subscriptions](https://github.com/kasir-barati/graphql/blob/main/docs/subscription.md).
+  - [GraphQL subscriptions](https://github.com/kasir-barati/graphql-js-ts/blob/main/docs/subscription.md).
   - [Pusher](https://pusher.com/).
 - Might like to learn about some of [the challenges of building a realtime app](https://www.infoq.com/articles/challenges-realtime-chat-service-pusher/).
 - To see how you acn use `socket.io` see our `chat-backend` and `chat-frontend` app.

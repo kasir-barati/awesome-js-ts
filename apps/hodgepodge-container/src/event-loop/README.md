@@ -13,6 +13,10 @@
   - Async: when we've defined a listener for an event.
   - Sync: When calling `.click()` method for example.
 
+> [!NOTE]
+>
+> See [one practical use of event loop](https://github.com/kasir-barati/graphql-js-ts/blob/main/docs/best-practices/batching.md#event-loop--dataloader--promise).
+
 > [!TIP]
 >
 > Never blocking nature of JS: Even when we query something from database, it registers callback and then starts executing the other tasks in the stack.

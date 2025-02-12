@@ -6,4 +6,3 @@
 - [RabbitMQ](./docs/rabbitmq.md).
   - [Examples are here](./src/rabbitmq/).
 - [Decorators in TS](./src/decorators/README.md).
-- [RxJS](./docs/rxjs.md)

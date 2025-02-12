@@ -22,4 +22,3 @@ Here I would share with you all sort of awesome things about TS/JS. E.g. Regex, 
 - [RabbitMQ](../docs/rabbitmq.md).
   - [Examples are here](../src/rabbitmq/).
 - [Decorators in TS](../src/decorators/README.md).
-- [RxJS](../docs/rxjs.md)

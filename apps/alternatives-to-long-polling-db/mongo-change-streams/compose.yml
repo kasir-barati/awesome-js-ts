@@ -1,0 +1,71 @@
+services:
+  mongo:
+    image: mongo:8.0
+    command:
+      [
+        "mongod",
+        "--replSet",
+        "rs0",
+        "--bind_ip_all",
+        "--port",
+        "27017",
+      ]
+    ports:
+      - "27019:27017"
+    healthcheck:
+      test: |
+        mongosh --quiet --port 27017 --eval "
+          try {
+            rs.status().ok
+          } catch (e) {
+            rs.initiate({
+              _id: 'rs0',
+              members: [{ _id: 0, host: 'mongo:27017' }],
+            });
+          }
+        "
+      interval: 5s
+      timeout: 10s
+      retries: 20
+      start_period: 5s
+
+  producer:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    depends_on:
+      mongo:
+        condition: service_healthy
+    environment:
+      MONGO_URL: mongodb://mongo:27017/?replicaSet=rs0&directConnection=true
+      MONGO_DB_NAME: demo
+      MONGO_COLLECTION: orders
+      PRODUCER_INTERVAL_MS: "3000"
+    command: ["node", "dist/producer.main.js"]
+
+  polling:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    depends_on:
+      mongo:
+        condition: service_healthy
+    environment:
+      MONGO_URL: mongodb://mongo:27017/?replicaSet=rs0&directConnection=true
+      MONGO_DB_NAME: demo
+      MONGO_COLLECTION: orders
+      POLL_INTERVAL_MS: "5000"
+    command: ["node", "dist/polling.main.js"]
+
+  watch:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    depends_on:
+      mongo:
+        condition: service_healthy
+    environment:
+      MONGO_URL: mongodb://mongo:27017/?replicaSet=rs0&directConnection=true
+      MONGO_DB_NAME: demo
+      MONGO_COLLECTION: orders
+    command: ["node", "dist/watch.main.js"]

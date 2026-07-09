@@ -1,0 +1,20 @@
+{
+  "name": "mongo-change-streams",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Replace cron-based long polling with MongoDB change streams (watch) using mongoose.",
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "start:polling": "node dist/polling.main.js",
+    "start:watch": "node dist/watch.main.js",
+    "start:producer": "node dist/producer.main.js",
+    "typecheck": "tsc --noEmit -p tsconfig.json"
+  },
+  "dependencies": {
+    "mongoose": "^8.8.3"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.1",
+    "typescript": "^7.0.2"
+  }
+}

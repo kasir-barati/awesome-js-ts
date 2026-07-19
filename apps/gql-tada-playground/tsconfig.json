@@ -1,0 +1,13 @@
+{
+  "compilerOptions": {
+    "target": "es2024",
+    "module": "nodenext",
+    "plugins": [ 
+      { 
+        "name": "gql.tada/ts-plugin", 
+        "schema": "./src/schema.graphql", 
+        "tadaOutputLocation": "./src/graphql-env.d.ts"
+      } 
+    ] 
+  }
+}

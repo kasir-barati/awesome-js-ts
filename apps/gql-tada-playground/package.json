@@ -1,0 +1,12 @@
+{
+  "name": "gql-tada-playground",
+  "scripts": {
+    "codegen": "gql.tada generate-output --tsconfig tsconfig.json"
+  },
+  "devDependencies": {
+    "typescript": "^5.9.3"
+  },
+  "dependencies": {
+    "gql.tada": "^1.11.2"
+  }
+}

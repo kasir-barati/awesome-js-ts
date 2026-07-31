@@ -1,0 +1,27 @@
+{
+  "name": "postgres-wal",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Replace cron-based long polling with Postgres logical replication (WAL). Uses Prisma for CRUD and pg-logical-replication for the WAL stream.",
+  "scripts": {
+    "build": "prisma generate && tsc -p tsconfig.json",
+    "prisma:generate": "prisma generate",
+    "prisma:migrate:deploy": "prisma migrate deploy",
+    "prisma:migrate:dev": "prisma migrate dev",
+    "start:polling": "node dist/polling.main.js",
+    "start:wal": "node dist/wal.main.js",
+    "start:producer": "node dist/producer.main.js",
+    "typecheck": "prisma generate && tsc --noEmit -p tsconfig.json"
+  },
+  "dependencies": {
+    "@prisma/client": "^6.19.3",
+    "pg": "^8.13.0",
+    "pg-logical-replication": "^2.5.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.1",
+    "@types/pg": "^8.11.10",
+    "prisma": "^6.19.3",
+    "typescript": "6.0.3"
+  }
+}

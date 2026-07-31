@@ -1,0 +1,80 @@
+services:
+  postgres:
+    image: postgres:16-alpine
+    container_name: pgwal-postgres
+    # Enable logical replication. `wal_level=logical` is what makes the WAL contain enough info to decode row-level changes.
+    command:
+      - "postgres"
+      - "-c"
+      - "wal_level=logical"
+      - "-c"
+      - "max_wal_senders=10"
+      - "-c"
+      - "max_replication_slots=10"
+    environment:
+      POSTGRES_USER: demo
+      POSTGRES_PASSWORD: demo
+      POSTGRES_DB: demo
+    ports:
+      - 55432:5432
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U demo -d demo"]
+      interval: 3s
+      timeout: 5s
+      retries: 20
+      start_period: 3s
+
+  producer:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: pgwal-producer
+    depends_on:
+      postgres:
+        condition: service_healthy
+    environment:
+      DATABASE_URL: postgresql://demo:demo@postgres:5432/demo
+      PG_HOST: postgres
+      PG_PORT: "5432"
+      PG_USER: demo
+      PG_PASSWORD: demo
+      PG_DATABASE: demo
+      PRODUCER_INTERVAL_MS: "3000"
+    command: ["node", "dist/producer.main.js"]
+
+  polling:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: pgwal-polling
+    depends_on:
+      postgres:
+        condition: service_healthy
+    environment:
+      DATABASE_URL: postgresql://demo:demo@postgres:5432/demo
+      PG_HOST: postgres
+      PG_PORT: "5432"
+      PG_USER: demo
+      PG_PASSWORD: demo
+      PG_DATABASE: demo
+      POLL_INTERVAL_MS: "5000"
+    command: ["node", "dist/polling.main.js"]
+
+  wal:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: pgwal-wal
+    depends_on:
+      postgres:
+        condition: service_healthy
+    environment:
+      DATABASE_URL: postgresql://demo:demo@postgres:5432/demo
+      PG_HOST: postgres
+      PG_PORT: "5432"
+      PG_USER: demo
+      PG_PASSWORD: demo
+      PG_DATABASE: demo
+      PG_PUBLICATION: orders_pub
+      PG_SLOT: orders_slot
+    command: ["node", "dist/wal.main.js"]

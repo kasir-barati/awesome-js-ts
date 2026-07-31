@@ -1,0 +1,39 @@
+generator client {
+  provider = "prisma-client-js"
+  output   = "../node_modules/.prisma/client"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Order {
+  id          BigInt    @id @default(autoincrement())
+  orderNumber String    @unique @map("order_number")
+  amount      Int
+  status      String    @default("new")
+  processedAt DateTime? @map("processed_at") @db.Timestamptz(6)
+  createdAt   DateTime  @default(now()) @map("created_at") @db.Timestamptz(6)
+  updatedAt   DateTime  @updatedAt @map("updated_at") @db.Timestamptz(6)
+
+  @@index([status])
+  @@index([updatedAt])
+  @@map("orders")
+}
+
+/// Mirrors the Mongo demo's `audit_logs` collection with a discriminator column.
+/// - `eventType = 'create' | 'update' | 'delete'`.
+/// - `payload` is used by create/delete (the row snapshot).
+/// - `before`/`after` are used by update.
+model AuditLog {
+  id        BigInt   @id @default(autoincrement())
+  eventType String   @map("event_type")
+  payload   Json?
+  before    Json?
+  after     Json?
+  createdAt DateTime @default(now()) @map("created_at") @db.Timestamptz(6)
+
+  @@index([eventType])
+  @@map("audit_logs")
+}

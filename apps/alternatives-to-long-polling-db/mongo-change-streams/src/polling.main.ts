@@ -28,7 +28,6 @@ async function main(): Promise<void> {
   console.log('[polling] connected to mongo');
 
   let busy = false;
-
   /**
    * @description Watermark: only fetch docs updated strictly after this timestamp.
    */
